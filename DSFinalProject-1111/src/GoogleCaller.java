@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
@@ -11,23 +12,28 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class GoogleQuery 
+public class GoogleCaller 
 {
 	public String searchKeyword;
 	public String url;
 	public String content;
+	public URL u;
 	
-	public GoogleQuery(String searchKeyword)
+	public GoogleCaller(String searchKeyword) throws MalformedURLException
 	{
 		this.searchKeyword = searchKeyword;
 		this.url = "http://www.google.com/search?q="+searchKeyword+"&oe=utf8&num=20";
+		u = new URL(url);
 	}
+	public GoogleCaller(String searchKeyword,URL u){
+		this.searchKeyword = searchKeyword;
+		this.u=u;
+}
 	
 	private String fetchContent() throws IOException
 	{
 		String retVal = "";
 
-		URL u = new URL(url);
 		URLConnection conn = u.openConnection();
 		//set HTTP header
 		conn.setRequestProperty("User-agent", "Chrome/107.0.5304.107");
