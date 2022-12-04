@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.print.DocFlavor.URL;
-
+//lab6 webPage
 public class HTMLHandler {
 	private String htmlContent;
 	public String url;
