@@ -6,11 +6,11 @@ import java.net.URL;
 import java.net.URLConnection;
 //Lab6
 public class KeywordCounter {
-	private String urlStr;
-    private String content;
+	public String urlStr;
+	public String content;
     
-    public KeywordCounter(String urlStr){
-    	this.urlStr = urlStr;
+    public KeywordCounter(String content){
+    	this.content = content;
     }
     
     private String fetchContent() throws IOException{

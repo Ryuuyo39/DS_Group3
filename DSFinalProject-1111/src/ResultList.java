@@ -3,8 +3,8 @@ import javax.print.DocFlavor.URL;
 
 public class ResultList 
 {
-	private ArrayList<URL> urls;
-	private ArrayList<String> titles;
+	public ArrayList<URL> urls;
+	public ArrayList<String> titles;
 	
 	public ResultList() {}
 	
