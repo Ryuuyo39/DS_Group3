@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="bor" align="center" style="position: relative;">
+		<h1> Jpop & VOCALOID Search <br></h1>
+		<form method="post" action="#">
+
+			<h4>Song's Name<br>
+				<input type="text" id="name" value="a"></h4>
+			<h4>Singer<br>
+				<input type="text" id="Singer" value="b"></h4>	
+			<h4>Producer<br>
+				<input type="text" id="Producer" value="c"></h4>
+			<p>
+				<h4>Search derection ?<br>
+				<div align="left" style="position: relative; left: 200px;">
+					<input type="checkbox" id="derection" name="derection" checked>
+			      		<label for="mv">MV</label><br>
+			      	<input type="checkbox" id="derection" name="derection" >
+			      		<label for="lyrics">Lyrics</label><br>
+			      	<input type="checkbox" id="derection" name="derection" >
+			      		<label for="background">Background</label><br>
+			    </div>  </h4>		
+			</p>
+			<button type="button"value="get result" onclick="output()">get result 
+			</button> 
+			<br>
+			<h4 id="disp"> </h4>
+		</form>
+		<br>
+		<script>
+		function output(){
+
+			var name=document.getElementById('name').value;
+			var singer=document.getElementById('Singer').value;
+			var producer=document.getElementById('Producer').value;
+			
+			var resultS='The result of['+name+', '+singer+', '+producer+' ]are as below:';
+			var msg=document.createElement('p');
+			msg.textContent=resultS;
+			document.getElementById('disp').appendChild(msg);
+		}
+	</script>
+	</div>
+</body>
+</html>
