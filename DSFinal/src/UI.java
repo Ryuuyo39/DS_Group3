@@ -8,7 +8,7 @@ public class UI
 	public JTextArea results;
 	
 	public UI(){}
-	public ArrayList<String> getInstance(){}
+//	public ArrayList<String> getInstance(){}
 	public void showResult() {}
 	
 }

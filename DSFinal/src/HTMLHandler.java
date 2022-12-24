@@ -19,7 +19,7 @@ public class HTMLHandler {
 		this.url=url;
 		counter=new KeywordCounter(GetHTML());
 	}
-	public ArrayList<String> DeriveRelativeKeywords(){}
+//	public ArrayList<String> DeriveRelativeKeywords(){}
 	
 	public String GetBody() throws IOException {
 		
