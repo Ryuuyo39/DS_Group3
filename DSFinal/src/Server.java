@@ -1,5 +1,4 @@
 
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -16,39 +15,39 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Server")
 public class Server extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Server() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-    
-    /*
-     * 第二種做法:Bmi頁面接get request&送post表單
-     * BmiResult頁面回應post request丟過來的表單
-     */
-    
-    
+
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 * 回應get request&送post表單
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public Server() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/*
+	 * 第二種做法:Bmi頁面接get request&送post表單 BmiResult頁面回應post request丟過來的表單
+	 */
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response) 回應get request&送post表單
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
-		if(request.getParameter("Singer")== null) {
+		if (request.getParameter("Singer") == null) {
 			String requestUri = request.getRequestURI();
 			request.setAttribute("requestUri", requestUri);
 			request.getRequestDispatcher("Song.jsp").forward(request, response);
 			return;
 		}
-		GetInput input = new GetInput(request.getParameter("name"),request.getParameter("Singer"),request.getParameter("Producer"));
-		
-		
+		GetInput input = new GetInput(request.getParameter("name"), request.getParameter("Singer"),
+				request.getParameter("Producer"), request.getParameter("MV"), request.getParameter("Lyrics"),
+				request.getParameter("Background"));
+
 //		GoogleQuery google = new GoogleQuery(request.getParameter("keyword"));
 //		HashMap<String, String> query = google.query();
 //		
@@ -62,15 +61,17 @@ public class Server extends HttpServlet {
 //		    s[num][1] = value;
 //		    num++;
 //		}
-//		request.getRequestDispatcher("googleitem.jsp")
-//		 .forward(request, response); 
-		
+
+		request.getRequestDispatcher("SongResult.jsp").forward(request, response);
+
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

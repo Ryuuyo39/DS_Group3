@@ -55,11 +55,11 @@ button:hover{
 			<p>
 				<h4>Search derection ?<br>
 				<div align="left" style="position: relative; left: 200px;">
-					<input type="checkbox" id="derection" name="derection" checked>
+					<input type="checkbox" id="derection" name="MV" checked>
 			      		<label for="mv">MV</label><br>
-			      	<input type="checkbox" id="derection" name="derection" >
+			      	<input type="checkbox" id="derection" name="Lyrics" >
 			      		<label for="lyrics">Lyrics</label><br>
-			      	<input type="checkbox" id="derection" name="derection" >
+			      	<input type="checkbox" id="derection" name="Background" >
 			      		<label for="background">Background</label><br>
 			    </div>  </h4>		
 			</p>
