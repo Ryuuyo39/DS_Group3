@@ -78,6 +78,9 @@ public class GoogleCaller
 			try 
 			{
 				String citeUrl = li.select("a").get(0).attr("href");
+				citeUrl = java.net.URLDecoder.decode(citeUrl, "UTF-8");
+				String[] url = citeUrl.split("&sa");
+				citeUrl = url[0];
 				String title = li.select("a").get(0).select(".vvjwJb").text();
 				
 				if(title.equals("")) 
