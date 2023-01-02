@@ -100,4 +100,17 @@ public class GoogleCaller
 		}
 		return retVal;
 	}
+	
+	public void sort() {
+		double x;
+		for(int i=0; i<links.size(); i++) {
+			for(int j=i+1; j<links.size(); j++) {
+				if(links.get(i).weight < links.get(j).weight) {
+					x = links.get(i).weight;
+					links.get(i).weight = links.get(j).weight;
+					links.get(j).weight = x;
+				}
+			}
+		}
+	}
 }
